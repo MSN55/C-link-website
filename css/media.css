@@ -9,6 +9,8 @@
     }
     .spacial-heading + p{
         margin-top: -20px;
+               text-align: center;
+
     }
     .portfolio .portfolio-content .card{
         text-align: center;
