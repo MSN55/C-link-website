@@ -1,4 +1,4 @@
-/* start variable */
+pxx* start variable */
 :root{
     --maincolor:#5196CE;
     --secondery-color:#2c4755;
@@ -64,14 +64,8 @@ body{
 /* start Header */
 .header{
     
-    padding: 20px;
-     z-index: 500;
-    position: fixed;
+    padding: 20px; 
     width: 100%;
-    top: 0;
-    background-color:hsl(207, 56%, 56%,0.2);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  
    
 
 
