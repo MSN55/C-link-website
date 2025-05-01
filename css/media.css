@@ -120,7 +120,7 @@
     }
     
     .spacial-heading{
-        font-size: 100px;
+        font-size: 80px;
         text-align: center;
 
     }
@@ -148,6 +148,24 @@
 @media (min-width:1200px){
     .container{
         width: 1170px;
+    }
+    .input-search{
+        width: 80px;
+        height: 80px;
+    }
+    .input-search::placeholder{
+        font-size: 18px;
+        color: white;
+    }
+    .btn-search{
+        width: 80px;
+        height: 80px;
+    }
+    .btn-search:focus ~ .input-search{
+        width: 300px;
+    }
+    .input-search:focus{
+        width: 300px;
     }
 }
 
