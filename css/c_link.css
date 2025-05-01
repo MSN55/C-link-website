@@ -196,9 +196,9 @@ body{
     outline: none;
     border-radius: 25px;
     transition: all .5s ease-in-out;
-    background-color: #22a6b3;
+    background-color: var(--litRed);
     padding-right: 40px;
-    color:white;
+    color:var(--litRed);
     
   }
   
