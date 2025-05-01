@@ -1,6 +1,6 @@
 
 /*  */
-@media (min-width:767px){
+@media (min-width:364px){
    
     .spacial-heading{
         font-size: 60px;
@@ -22,9 +22,60 @@
     .portfolio{
         width: 100%;
     }
+  
 }
 
+@media(min-width:364px){
+    .input-search{
+        width: 50px;
+        height: 50px;
+    }
+    .input-search::placeholder{
+        font-size: 10.8px;
+        color: white;
+    }
+    .btn-search{
+        width: 50px;
+        height: 50px;
 
+    }
+    .btn-search:focus ~ .input-search{
+        width: 150px;
+    }
+    .input-search:focus{
+        width: 150px;
+    }
+    
+  
+}
+
+@media (min-width:767px){
+    .input-search{
+        width: 50px;
+        height: 50px;
+    }
+    .input-search::placeholder{
+        font-size: 16px;
+        color: white;
+    }
+    .btn-search{
+        width: 50px;
+        height: 50px;
+    }
+    .btn-search:focus ~ .input-search{
+        width: 200px;
+    }
+    .input-search:focus{
+        width: 200px;
+    }
+    .spacial-heading{
+        font-size: 60px;
+        text-align: center;
+
+    }
+   
+  
+}
 /* small */
 
 @media(min-width:768px){
@@ -32,14 +83,45 @@
         width: 750px;
     }
     
-   
+    .spacial-heading{
+        font-size: 100px;
+        text-align: center;
+
+    }
+    .spacial-heading + p{
+        margin: -30px 0 0;
+        font-size: 20px;
+        text-align: center;
+        color: #797979;
+    }
+    .input-search{
+        width: 50px;
+        height: 50px;
+    }
+    .input-search::placeholder{
+        font-size: 18px;
+        color: white;
+    }
+    .btn-search{
+        width: 50px;
+        height: 50px;
+    }
+    .btn-search:focus ~ .input-search{
+        width: 300px;
+    }
+    .input-search:focus{
+        width: 300px;
+    }
+    
 }
 
 /* medium */
+
 @media (min-width:992px){
     .container{
         width: 970px;
     }
+  
 }
 
 /* large */
@@ -55,6 +137,8 @@
     .image_col{
         display: none;
     }
+  
+    
 }
 
 @media(max-width:991px){

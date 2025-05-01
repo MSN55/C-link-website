@@ -220,7 +220,6 @@ body{
   }
   .btn-search:focus ~ .input-search{
     width: 300px;
-   
     border-radius: 15px;
     background-color: var(--litRed);
     border-bottom:1px solid rgba(255,255,255,.5);
@@ -229,7 +228,6 @@ body{
   }
   .input-search:focus{
     width: 300px;
-  
     border-radius: 15px;
     background-color: var(--litRed);
     border-bottom:1px solid rgba(255,255,255,.5);
