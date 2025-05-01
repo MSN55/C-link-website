@@ -1,4 +1,4 @@
-* start variable */
+/* start variable */
 :root{
     --maincolor:#5196CE;
     --secondery-color:#2c4755;
@@ -63,11 +63,8 @@ body{
 
 /* start Header */
 .header{
-    
-    padding: 20px; 
+    padding: 20px;
     width: 100%;
-   
-
 
 }
 .header .container{
@@ -196,7 +193,7 @@ body{
     outline: none;
     border-radius: 25px;
     transition: all .5s ease-in-out;
-    background-color: var(--litRed);
+    background-color: #22a6b3;
     padding-right: 40px;
     color:white;
     
