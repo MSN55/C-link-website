@@ -39,6 +39,10 @@
      <div class="header">
         <div class="container">
             <img class="logo" src="home page/C.png" alt="">
+            <div class="search-box">
+                <button class="btn-search"  id="search-button"><i class="fas fa-search"></i></button>
+                <input type="search" class="input-search" id="search-input" placeholder="Type to Search...">
+              </div>
             <div class="links">
                 <span class="icon">
                     <span></span>
@@ -57,8 +61,13 @@
      <!-- Start landing section -->
 
      <div class="landing">
-        <img src="home page/c-link.png" alt="">
+       
 
+        <img src="home page/c-link.png" alt="">
+       
+        
+        
+       
      </div>
       <!-- End landing section -->
 
@@ -97,7 +106,7 @@
                 <p>Don't be busy, be productive</p>
                 <div class="portfolio-content">
                     
-                    <div class="card">
+                    <div class="card" data-keywords="AI tools ,productivity ,creativity">
                         <img src="home page/Ai.jpg" >
                         <div class="info">
                             <h3><button type="button" class="button"><a href="index1.html">Ai tools</a></button></h3>
@@ -105,7 +114,7 @@
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card" data-keywords="library resources books">
                         <img src="home page/library.jpg" alt="">
                         <div class="info">
                             <h3><button type="button" class="button"><a href="index2.html" >library</a></button></h3>
@@ -200,7 +209,61 @@
                   </div>
                  
                  <!-- End Footer -->
-
+              <script >
+              document.addEventListener('DOMContentLoaded', function() {
+    // تحديد العناصر
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const cards = document.querySelectorAll('.card');
+    
+    // دالة البحث الرئيسية
+    function performSearch() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        let firstResult = null;
+        
+        cards.forEach(card => {
+            const keywords = card.getAttribute('data-keywords') || '';
+            const content = card.textContent.toLowerCase();
+            
+            // التحقق من تطابق النتائج
+            const isMatch = searchTerm === '' || 
+                          keywords.includes(searchTerm) || 
+                          content.includes(searchTerm);
+            
+            card.style.display = isMatch ? 'block' : 'none';
+            
+            // تحديد أول نتيجة مطابقة
+            if (isMatch && !firstResult) {
+                firstResult = card;
+            }
+        });
+        
+        // التمرير إلى النتيجة الأولى إذا وجدت
+        if (firstResult && searchTerm !== '') {
+            setTimeout(() => {
+                firstResult.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // إضافة تأثير مرئي
+                firstResult.style.animation = 'highlight 2s';
+            }, 100);
+        } else if (searchTerm !== '') {
+            console.log('لا توجد نتائج');
+        }
+    }
+    
+    // أحداث البحث
+    searchButton.addEventListener('click', performSearch); // عند النقر على الأيقونة
+    searchInput.addEventListener('keydown', function(e) { // عند الضغط على Enter
+        if (e.key === 'Enter') {
+            e.preventDefault(); // منع السلوك الافتراضي (مهم للنماذج)
+            performSearch();
+        }
+    });
+});
+              </script>
 
 </body>
 </html>

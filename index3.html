@@ -17,13 +17,19 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+      <!-- Font Awesome Icons -->
+       <link rel="stylesheet" href="css/all.min.css">
 
       
 </head>
 <body>
     <div class="container">
-        <header class="spacial-heading">
+        <header class="spacial-heading head1">
             Educational Websites
+            <div class="search-box">
+              <button class="btn-search"  id="search-button"><i class="fas fa-search"></i></button>
+              <input type="search" class="input-search" id="search-input" placeholder="Type to Search...">
+            </div>
         </header>
 
         <div class="grid">
@@ -516,5 +522,61 @@
         </div>
 
     </div>
+    <script >
+      document.addEventListener('DOMContentLoaded', function() {
+// تحديد العناصر
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const cards = document.querySelectorAll('.nametool');
+
+// دالة البحث الرئيسية
+function performSearch() {
+const searchTerm = searchInput.value.trim().toLowerCase();
+let firstResult = null;
+
+cards.forEach(card => {
+    const keywords = card.getAttribute('data-keywords') || '';
+    const content = card.textContent.toLowerCase();
+    
+    // التحقق من تطابق النتائج
+    const isMatch = searchTerm === '' || 
+                  keywords.includes(searchTerm) || 
+                  content.includes(searchTerm);
+    
+    card.style.display = isMatch ? 'block' : 'none';
+    
+    // تحديد أول نتيجة مطابقة
+    if (isMatch && !firstResult) {
+        firstResult = card;
+    }
+});
+
+// التمرير إلى النتيجة الأولى إذا وجدت
+if (firstResult && searchTerm !== '') {
+    setTimeout(() => {
+        firstResult.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        
+        // إضافة تأثير مرئي
+        firstResult.style.animation = 'highlight 2s';
+    }, 100);
+} else if (searchTerm !== '') {
+    console.log('لا توجد نتائج');
+}
+}
+
+// أحداث البحث
+searchButton.addEventListener('click', performSearch); // عند النقر على الأيقونة
+searchInput.addEventListener('keydown', function(e) { // عند الضغط على Enter
+if (e.key === 'Enter') {
+    e.preventDefault(); // منع السلوك الافتراضي (مهم للنماذج)
+    performSearch();
+}
+});
+});
+      </script>
+
 </body>
 </html>
