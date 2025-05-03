@@ -18,7 +18,7 @@ html{
 }
 body{
     font-family: "Work Sans", sans-serif;
-    background-color: var(--section-background);
+        background-image: linear-gradient(to bottom,var(--section-background), var(--litRed));
 }
 
 
