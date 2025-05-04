@@ -170,6 +170,7 @@ body{
 
 .landing{
     position: relative;
+    padding-top:150px;
 }
 .landing img{
     display: block;
@@ -311,8 +312,6 @@ body{
 }
 .portfolio .portfolio-content .card h3{
     margin: 0;
-    perspective: 500px;
-
 }
 .portfolio .portfolio-content .card p{
     color: #777;
